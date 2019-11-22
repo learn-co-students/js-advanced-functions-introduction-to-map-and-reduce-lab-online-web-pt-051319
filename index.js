@@ -1,53 +1,56 @@
-function mapToNegativize(src) {
-    let r = []
-    for (let i = 0; i < src.length; i++ ) {
-      r.push(-1 * src[i])
-    }
-    return r
+// Return array with opposite values of input array
+function mapToNegativize(sourceArray) {
+    let newArr = []
+    sourceArray.forEach(el => newArr.push(-el))
+    return newArr
+    // like return sourceArray.map(el => -el)
   }
   
-  function mapToNoChange(src) {
-    let r = []
-    for (let i = 0; i < src.length; i++ ) {
-      r.push(src[i])
-    }
-    return r
+  // Return original array
+  function mapToNoChange(sourceArray) {
+    return sourceArray
   }
   
-  function mapToDouble(src) {
-    let r = []
-    for (let i = 0; i < src.length; i++ ) {
-      r.push(2 * src[i])
-    }
-    return r
+  // Return array with doubled values of input array 
+  function mapToDouble(sourceArray) {
+    let newArr = []
+    sourceArray.forEach(el => newArr.push(el * 2))
+    return newArr
+    // like return sourceArray.map(el => el * 2)
   }
   
-  function mapToSquare(src) {
-    let r = []
-    for (let i = 0; i < src.length; i++ ) {
-      r.push(src[i] * src[i])
-    }
-    return r
+  // Return array with squared values of input array 
+  function mapToSquare(sourceArray) {
+    let newArr = []
+    sourceArray.forEach(el => newArr.push(el ** 2))
+    return newArr
+    // like return sourceArray.map(el => el ** 2)
   }
   
-  function reduceToTotal(src, startingPoint=0) {
+  // Return running total
+  function reduceToTotal(sourceArray, startingPoint = 0) {
     let total = startingPoint
-    for (let i = 0; i < src.length; i++ ) {
-      total = total + src[i]
-    }
+    sourceArray.forEach(el => total += el)
     return total
+    // like return sourceArray.reduce(function(total, el){ return el + total}, startingPoint)
   }
   
-  function reduceToAllTrue(src) {
-    for (let i = 0; i < src.length; i++ ) {
-      if (!src[i]) return false
-    }
-    return true
+  // Return true if all elements are truthy; else return false
+  function reduceToAllTrue(sourceArray) {
+    let truthy = true
+    sourceArray.forEach(el => {
+      !!el ? undefined: truthy = false
+    })
+    return truthy
+    // like return sourceArray.every(el => !!el)
   }
   
-  function reduceToAnyTrue(src) {
-    for (let i = 0; i < src.length; i++ ) {
-      if (src[i]) return true
-    }
-    return false
+  // Return true if any element truthy; else return false 
+  function reduceToAnyTrue(sourceArray) {
+    let truthy = false
+    sourceArray.forEach(el => {
+      !!el ? truthy = true : undefined
+    })
+    return truthy
+    // like return sourceArray.some(el => !!el)
   }
