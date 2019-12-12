@@ -22,8 +22,18 @@ const mapToSquare = function(arr) {
   return newArr
 };
 
-const reduceToTotal = function(arr, start=0) {
-  const collectArr = start
-  arr.forEach(n => collectArr += n )
-  return collectArr
+// const reduceToTotal = function(arr, start=0) {
+//   const collectArr = start
+//   arr.forEach(n => collectArr += n )
+//   return collectArr
+// };
+
+const reduceToAllTrue = function(arr) {
+  arr.ForEach(a => {if (a === false) 
+    {return false;}}
+  )
+};
+
+const reduceToAnyTrue = function() {
+
 };
