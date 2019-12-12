@@ -22,18 +22,24 @@ const mapToSquare = function(arr) {
   return newArr
 };
 
-// const reduceToTotal = function(arr, start=0) {
-//   const collectArr = start
-//   arr.forEach(n => collectArr += n )
-//   return collectArr
-// };
+function reduceToTotal(src, startingPoint=0) {
+  let total = startingPoint
+  for (let i = 0; i < src.length; i++ ) {
+    total = total + src[i]
+  }
+  return total
+}
 
-const reduceToAllTrue = function(arr) {
-  arr.ForEach(a => {if (a === false) 
-    {return false;}}
-  )
-};
+function reduceToAllTrue(src) {
+  for (let i = 0; i < src.length; i++ ) {
+    if (!src[i]) return false
+  }
+  return true
+}
 
-const reduceToAnyTrue = function() {
-
-};
+function reduceToAnyTrue(src) {
+  for (let i = 0; i < src.length; i++ ) {
+    if (src[i]) return true
+  }
+  return false
+}
